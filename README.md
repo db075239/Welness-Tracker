@@ -49,7 +49,7 @@ We explored how fitness and lifestyle variables interact across various dimensio
 - **Goal:** Predict which users are likely to stop using the app or unsubscribe  
 - **Algorithm:** `RandomForestClassifier`  
 - **Technique:** Handled class imbalance using `SMOTE`  
-- **Features:** Activity frequency, sleep quality, stress levels, etc.  
+- **Features:** Activity frequency, demographics, stress levels, etc.  
 
 ✅ Helps businesses intervene early to retain users.
 

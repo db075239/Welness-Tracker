@@ -1,82 +1,140 @@
-Wellness Tracker: Data-Driven Health & Fitness Insights
-This project focuses on leveraging data analytics and machine learning to provide valuable insights into health and fitness data, ultimately aiming to enhance user engagement and commitment to their fitness journey. We developed a comprehensive system that includes in-depth data analysis, predictive modeling, user segmentation, and a personalized workout recommendation application.
+# 💪 Wellness Tracker: Data-Driven Health & Fitness Insights
 
-Project Overview
-Our primary goal was to extract actionable insights and patterns from a health and fitness dataset to empower users and benefit businesses in the wellness sector. We employed a combination of descriptive analytics (Data Analysis) and advanced data mining techniques (Classification, Clustering, Collaborative Filtering).
+This project leverages **data analytics** and **machine learning** to deliver valuable insights from health and fitness data—aiming to boost user engagement and help users stay committed to their wellness journey.
 
-1. Data Analysis: Unveiling Fitness Benefits
-In the initial phase, we conducted extensive data analysis to demonstrate the tangible benefits of fitness and how our proposed application can contribute to users' overall well-being. This involved exploring various aspects of health and lifestyle, such as:
+We developed a comprehensive system combining:
 
-Workout Trends: How activity types vary across different demographics (age, gender, BMI).
+- 📊 In-depth data analysis  
+- 🤖 Predictive modeling  
+- 👥 User segmentation  
+- 🧠 Personalized workout recommendation system  
 
-Activity Effectiveness: Identifying the most effective activity types based on calories burned.
+---
 
-Lifestyle Impact: Analyzing how factors like smoking affect health metrics (stress, sleep, exercise duration, intensity).
+## 📌 Project Overview
 
-Demographic Influence: Understanding how demographic information impacts fitness performance (exercise duration, steps count, intensity).
+Our primary objective was to extract **actionable insights** and **patterns** from a health and fitness dataset, empowering users and providing value to stakeholders in the wellness industry.
 
-Health Correlations: Investigating relationships between blood pressure and stress levels, BMI and physical fitness, and hydration levels with average heart rate during exercise.
+We applied:
 
-Daily Steps Patterns: Examining the average number of steps per stress level and age group.
+- **Descriptive Analytics** – for data exploration and visualization  
+- **Data Mining Techniques** – including classification, clustering, and collaborative filtering  
 
-These insights highlight the crucial connections between activity, health indicators, and lifestyle choices, demonstrating why consistent engagement with a fitness tracking app is beneficial.
+---
 
-You can explore interactive dashboards and gain deeper insights into our data analysis findings here:
-Tableau Public Dashboard
+## 🔍 1. Data Analysis: Unveiling Fitness Benefits
 
-2. Data Mining: Predictive Insights & Personalization
-The data mining phase involved building intelligent models to predict user behavior and offer personalized experiences:
+We explored how fitness and lifestyle variables interact across various dimensions like demographics, health indicators, and behaviors.
 
-User Churn Prediction (Classification)
-Goal: To identify users who are at risk of discontinuing their fitness tracking or service subscriptions. This is crucial for businesses to intervene early and improve retention.
-Methodology: We developed a robust user churn prediction system using a Random Forest Classifier. To address data imbalance (fewer users quitting than retaining), we applied SMOTE (Synthetic Minority Over-sampling Technique) on the training data. The model accurately classifies users as "Retained" or "At Risk of Quitting" based on their activity frequency, sleep quality, stress levels, and other health/activity data.
-Benefit: Provides valuable insights for health and wellness centers and fitness apps to proactively engage with users and reduce churn.
+### Key Insights
 
-User Segmentation (Clustering)
-Goal: To identify distinct types of users based on their health and activity habits, enabling tailored recommendations and fostering connections among similar users.
+- **Workout Trends:** Activity types across age, gender, and BMI  
+- **Activity Effectiveness:** Activities ranked by average calories burned  
+- **Lifestyle Impact:** Effects of smoking on sleep, stress, and exercise  
+- **Demographic Influence:** How age and gender affect workout intensity and steps  
+- **Health Correlations:** BMI vs. fitness, stress vs. blood pressure, hydration vs. heart rate  
+- **Daily Steps Patterns:** Average steps by age group and stress level  
 
-Initial Approach (Workout Intensity): We first attempted to cluster users based on their average workout intensity and activity types. While this provided some grouping, the clusters were not as distinct as desired.
+👉 _These insights form the backbone of our app’s logic and validate its necessity._
 
-Refined Approach (Health & Fitness Metrics): We then performed a more comprehensive segmentation, clustering users into four distinct behavioral groups based on a wider range of demographic and fitness habits (e.g., age, BMI, duration, calories burned, sleep, stress, steps, hydration, fitness level). These clusters include:
+📊 **Interactive Dashboard:**  
+> View insights via our [Tableau Public Dashboard](https://public.tableau.com/app/profile/david.blazheski/vizzes)
 
-Young, High-Activity Users: Active individuals benefiting from performance-focused programs.
+---
 
-Older, Consistent Exercisers: Users maintaining steady workouts, ideal for endurance plans.
+## 🤖 2. Data Mining: Predictive Insights & Personalization
 
-Older, Low-Activity Group: Participants with short, low-intensity sessions, suited for beginner routines.
+### 🔐 User Churn Prediction (Classification)
 
-Young, Inefficient Exercisers: Younger users with high heart rates but low output, needing structured training and stress management.
+- **Goal:** Predict which users are likely to stop using the app or unsubscribe  
+- **Algorithm:** `RandomForestClassifier`  
+- **Technique:** Handled class imbalance using `SMOTE`  
+- **Features:** Activity frequency, sleep quality, stress levels, etc.  
 
-Benefit: This refined clustering allows for highly targeted advertising, personalized content, and tailored class recommendations (e.g., more yoga sessions for low-intensity groups). It also enables users to connect with others who share similar workout routines, eating habits, or fitness goals, fostering a supportive community.
+✅ Helps businesses intervene early to retain users.
 
-Personalized Workout Recommendations (Collaborative Filtering)
-Goal: To provide real-time, personalized workout suggestions to users based on similarities with other users.
-Methodology: We built a recommendation system using the K-Nearest Neighbors (KNN) algorithm. When a new user inputs their information (age, gender, height, weight, stress level, preferred workout duration), the system identifies the most similar existing users. It then recommends the top three workout activities most frequently performed by those similar users.
-Application: This functionality is showcased through an interactive web application built with Streamlit, allowing users to receive instant, tailored exercise suggestions.
+---
 
-3. Application: Interactive Workout Recommender
-To demonstrate the practical application of our data mining models, we developed a user-friendly interface using the Streamlit library. This web form allows users to input their personal details and instantly receive their top three personalized workout recommendations. This simulation highlights how the system can provide real-time, data-driven suggestions. Additionally, the application can classify users as "At Risk" or "Retained" and show them which cluster they belong to, providing valuable insights for both users and business owners.
+### 👤 User Segmentation (Clustering)
 
-Technologies Used
-Programming Language: Python
+We used clustering to identify user archetypes based on their habits:
 
-Data Manipulation: Pandas, NumPy
+#### 📈 First Attempt:
+- Based only on workout intensity → **Poor separation**
 
-Machine Learning: Scikit-learn (StandardScaler, KMeans, RandomForestClassifier, TSNE, PCA)
+#### ✅ Refined Clustering:
+Based on age, BMI, sleep, calories burned, hydration, stress, steps, etc.
 
-Imbalanced Data Handling: imblearn (SMOTE)
+**Identified Segments:**
 
-Data Visualization: Matplotlib, Seaborn
+1. **Young, High-Activity Users** – Ideal for performance-focused programs  
+2. **Older, Consistent Exercisers** – Suitable for endurance routines  
+3. **Older, Low-Activity Users** – Best served by beginner-friendly plans  
+4. **Young, Inefficient Exercisers** – Need structured training and stress management  
 
-Web Application Framework: Streamlit
+✅ Enables targeted recommendations, ads, and community features.
 
-Database: PostgreSQL (for Data Warehouse)
+---
 
-ETL Tool: Pentaho
+### 🧠 Personalized Workout Recommendations (Collaborative Filtering)
 
-Business Intelligence & Visualization: Tableau
+- **Goal:** Suggest workouts based on similar users  
+- **Algorithm:** `K-Nearest Neighbors (KNN)`  
+- **Input:** Age, gender, height, weight, stress level, workout duration  
+- **Output:** Top 3 workouts most frequently done by similar users  
 
-Dataset
-The project utilizes the "FitLife Health & Fitness Tracking Dataset" from Kaggle, which contains comprehensive fitness tracking data, including demographic information, activity metrics, health indicators, and lifestyle metrics for various participants.
+🎯 Powering real-time personalization.
 
-Kaggle Dataset Link
+---
+
+## 💻 3. Application: Interactive Workout Recommender
+
+We built a web app using **Streamlit** that allows users to:
+
+- Input personal info (age, gender, fitness level, etc.)  
+- Receive **personalized workout suggestions**  
+- See their **churn status** and **cluster type**  
+
+🌐 _Bridging ML with user experience in real time!_
+
+---
+
+## 🧰 Technologies Used
+
+| Category                 | Tools/Frameworks                                           |
+|--------------------------|------------------------------------------------------------|
+| **Programming Language** | Python                                                     |
+| **Data Manipulation**    | Pandas, NumPy                                              |
+| **Machine Learning**     | Scikit-learn (`StandardScaler`, `KMeans`, `RandomForest`), TSNE, PCA |
+| **Imbalanced Data**      | `imblearn` (SMOTE)                                         |
+| **Visualization**        | Matplotlib, Seaborn                                        |
+| **Web App**              | Streamlit                                                  |
+| **Database**             | PostgreSQL (Data Warehouse)                                |
+| **ETL Tool**             | Pentaho                                                    |
+| **BI Dashboard**         | Tableau                                                    |
+
+---
+
+## 📂 Dataset
+
+We used the **FitLife Health & Fitness Tracking Dataset** from Kaggle, containing rich data on:
+
+- Demographics  
+- Activity metrics  
+- Health indicators  
+- Lifestyle factors  
+
+🔗 [Kaggle Dataset – FitLife Health & Fitness Tracking](https://www.kaggle.com/datasets/ganeshkumar269/fitlife-health-fitness-tracking)
+
+---
+
+## 🚀 Project Highlights
+
+- 📉 Reduced churn through predictive analytics  
+- 🧬 Identified behavioral patterns via clustering  
+- 🏋️ Delivered personalized workout plans  
+- 📈 Empowered business strategies with actionable insights  
+- 💡 Delivered everything through an interactive, intuitive web interface  
+
+---
+
